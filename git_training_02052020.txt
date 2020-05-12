@@ -1,0 +1,73 @@
+git       # show available git options
+
+clear     # clear the displayed content in the CLI 
+
+# git configurations
+git config --global user.name "users_name"
+git config --global user.email "xxx.xxx@nist.gov"
+git config --global core.editor "nano -w"      OR "vim" for vim editor
+git config --list  # show all git configuration options
+
+
+mkdir planets  # make a directory called "planets"
+cd planets
+git init
+ls -a    # show all files in the folder
+git status   
+
+nano mars.txt  # make a mars.txt file, and write some text in it, and save it.
+cat mars.txt   # show the content in the file
+git status 
+    
+git add mars.txt
+git status
+git commit -m "start notes on mars as a base"  # this is not a good commit message
+git commit -m "Added my notes about color"     # explain the added content
+git log   # show commit history
+
+git diff  # give the line-by-line comparison about the difference
+git diff --staged
+
+git log -1  # show the most recent commit message
+git log -2  # show the latest two commit messages
+git log --oneline
+git log --oneline --graph
+
+mkdir spaceships
+git status  # ==> show no change, git only recognizes the change after some update of data, not empty folders
+touch firefly.txt
+nano firefly.txt
+
+git add -A .
+
+# for an erronous change to the file, check and locate the change
+git diff HEAD mars.txt
+git diff HEAD~1 mars.txt    # show the difference 1 change ago
+# for a lot of ill-considered changes
+git checkout HEAD mars.txt  # remove any change after the last commit, i.e., HEAD
+
+git add -A spaceships  # add all changes in the folder spaceships into the git, which does not add the other changes in other files in the same folder as spaceships
+
+touch a.dat b.dat c.dat
+nano .gitignore    # add *.dat in this file to ignore any .dat files in the folder. The rules also apply to the subfolders (verified)
+git add .gitignore
+git commit -m " add my ignore file so that data is not included in my git"
+
+
+# Create a new repository in GitHub
+# Follow the instruction to push the local files into the online repository
+
+
+https://github.com/ykLIU1982/planetsDracula.git
+
+
+
+
+
+
+
+
+
+
+
+
